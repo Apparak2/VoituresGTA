@@ -18,5 +18,9 @@ class Program
     static void Main(string[] args)
     {
         string[] cars = { "Banshee", "Zentorno", "Sultan", "Sanchez", "Buzzard" };
+        for(int i = 0; i < cars.Length; i++)
+        {
+            Console.WriteLine(cars[i]);
+        }
     }
 }
