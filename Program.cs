@@ -18,11 +18,14 @@ class Program
     static void Main(string[] args)
     {
         
+        //Declare variable to have global access
         string errorMess = "";
         int nbCar;
         
         string[] cars = { "Banshee", "Zentorno", "Sultan", "Sanchez", "Buzzard" };
         DisplayCarsContent(cars);
+
+        //While user's tapped index is out of bounds, re-asks him the index
         do {
             Console.WriteLine("Quelle voiture voulez-vous remplacer ? (1 à 5)");
             nbCar = Convert.ToInt32(Console.ReadLine());
@@ -31,6 +34,8 @@ class Program
         }
         while (errorMess != "");
         string newCar;
+
+        //While user's tapped new car is in the array, re-asks the car
         do
         {
             Console.WriteLine("Quel est le nom du nouveau véhicule ?");
@@ -40,10 +45,13 @@ class Program
         }
         while (errorMess != "");
         
+        //if newCar is null, affect empty string
         cars[nbCar - 1] = newCar ?? "";
 
         DisplayCarsContent(cars);
     }
+
+    //Display each car of cars array
     static void DisplayCarsContent(string[] cars)
     {
         for (int i = 0; i < cars.Length; i++)
@@ -51,6 +59,8 @@ class Program
             Console.WriteLine(cars[i]);
         }
     }
+
+    //Display error message if not empty
     static void DisplayErrorMess(string errorMess)
     {
         if(errorMess != "")
