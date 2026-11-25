@@ -26,6 +26,7 @@ class Program
         int nbCar = Convert.ToInt32(Console.ReadLine());
         /* string errorMess = (nbCar >= 1 && nbCar <= 5) ? "Ce n'est pas une valeur valide !" : "";
         */
-
+        Console.WriteLine("Quel est le nom du nouveau véhicule ?");
+        string newCar = Console.ReadLine();
     }
 }
