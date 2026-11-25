@@ -17,22 +17,29 @@ class Program
 {
     static void Main(string[] args)
     {
+        
         string errorMess = "";
         int nbCar;
+        
         string[] cars = { "Banshee", "Zentorno", "Sultan", "Sanchez", "Buzzard" };
         DisplayCarsContent(cars);
         do {
             Console.WriteLine("Quelle voiture voulez-vous remplacer ? (1 à 5)");
             nbCar = Convert.ToInt32(Console.ReadLine());
             errorMess = (!(nbCar >= 1 && nbCar <= 5)) ? "Ce n'est pas une valeur valide !" : "";
-            if(errorMess != "")
-            {
-                Console.WriteLine(errorMess);
-            }
+            DisplayErrorMess(errorMess);
         }
         while (errorMess != "");
-        Console.WriteLine("Quel est le nom du nouveau véhicule ?");
-        string newCar = Console.ReadLine();
+        string newCar;
+        do
+        {
+            Console.WriteLine("Quel est le nom du nouveau véhicule ?");
+            newCar = Console.ReadLine();
+            errorMess = (System.Array.IndexOf(cars, newCar) != -1) ? "Ce véhicule existe déjà !" : "";
+            DisplayErrorMess(errorMess);
+        }
+        while (errorMess != "");
+        
         cars[nbCar - 1] = newCar ?? "";
 
         DisplayCarsContent(cars);
@@ -42,6 +49,13 @@ class Program
         for (int i = 0; i < cars.Length; i++)
         {
             Console.WriteLine(cars[i]);
+        }
+    }
+    static void DisplayErrorMess(string errorMess)
+    {
+        if(errorMess != "")
+        {
+            Console.WriteLine(errorMess);
         }
     }
 }
