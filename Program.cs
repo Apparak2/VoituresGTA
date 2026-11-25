@@ -22,5 +22,10 @@ class Program
         {
             Console.WriteLine(cars[i]);
         }
+        Console.WriteLine("Quelle voiture voulez-vous remplacer ? (1 à 5)");
+        int nbCar = Convert.ToInt32(Console.ReadLine());
+        /* string errorMess = (nbCar >= 1 && nbCar <= 5) ? "Ce n'est pas une valeur valide !" : "";
+        */
+
     }
 }
