@@ -29,5 +29,10 @@ class Program
         Console.WriteLine("Quel est le nom du nouveau véhicule ?");
         string newCar = Console.ReadLine();
         cars[nbCar - 1] = newCar ?? "";
+
+        for (int i = 0; i < cars.Length; i++)
+        {
+            Console.WriteLine(cars[i]);
+        }
     }
 }
