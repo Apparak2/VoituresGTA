@@ -54,7 +54,7 @@ class Program
     //Display each car of cars array
     static void DisplayCarsContent(string[] cars)
     {
-        Console.WriteLine("Voiture du garage : ");
+        Console.WriteLine("Voitures du garage : ");
         for (int i = 0; i < cars.Length; i++)
         {
             Console.WriteLine($"{i + 1}. {cars[i]}");
