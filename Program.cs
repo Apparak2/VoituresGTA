@@ -18,10 +18,7 @@ class Program
     static void Main(string[] args)
     {
         string[] cars = { "Banshee", "Zentorno", "Sultan", "Sanchez", "Buzzard" };
-        for(int i = 0; i < cars.Length; i++)
-        {
-            Console.WriteLine(cars[i]);
-        }
+        DisplayCarsContent(cars);
         Console.WriteLine("Quelle voiture voulez-vous remplacer ? (1 à 5)");
         int nbCar = Convert.ToInt32(Console.ReadLine());
         /* string errorMess = (nbCar >= 1 && nbCar <= 5) ? "Ce n'est pas une valeur valide !" : "";
@@ -30,6 +27,10 @@ class Program
         string newCar = Console.ReadLine();
         cars[nbCar - 1] = newCar ?? "";
 
+        DisplayCarsContent(cars);
+    }
+    static void DisplayCarsContent(string[] cars)
+    {
         for (int i = 0; i < cars.Length; i++)
         {
             Console.WriteLine(cars[i]);
