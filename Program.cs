@@ -25,7 +25,7 @@ class Program
         string[] cars = { "Banshee", "Zentorno", "Sultan", "Sanchez", "Buzzard" };
         DisplayCarsContent(cars);
 
-        //While user's tapped index is out of bounds, re-asks him the index
+        //While user's tapped index is out of bounds, re-ask the index
         do {
             Console.WriteLine("Quelle voiture voulez-vous remplacer ? (1 à 5)");
             nbCar = Convert.ToInt32(Console.ReadLine());
@@ -35,7 +35,7 @@ class Program
         while (errorMess != "");
         string newCar;
 
-        //While user's tapped new car is in the array, re-asks the car
+        //While user's tapped new car is in the array, re-ask the car
         do
         {
             Console.WriteLine("Quel est le nom du nouveau véhicule ?");
